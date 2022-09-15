@@ -1,0 +1,28 @@
+// media queries manager
+@mixin response($breakpoint) {
+  @if $breakpoint == "laptop" {
+    @media only screen and (max-width: 68.7rem) {
+      @content; //1100px
+    }
+  }
+  @if $breakpoint == "small-laptop" {
+    @media only screen and (max-width: 57rem) {
+      @content; //912px
+    }
+  }
+  @if $breakpoint == "tablet" {
+    @media only screen and (max-width: 43.125rem) {
+      @content; //690px
+    }
+  }
+  @if $breakpoint == "mobile" {
+    @media only screen and (max-width: 35.7rem) {
+      @content; //571px
+    }
+  }
+  @if $breakpoint == "small-mobile" {
+    @media only screen and (max-width: 22.25rem) {
+      @content; //356px
+    }
+  }
+}

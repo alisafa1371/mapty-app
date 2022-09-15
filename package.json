@@ -1,0 +1,36 @@
+{
+  "name": "mapty-app",
+  "version": "1.0.0",
+  "description": "A web application for showing running and cycling workouts on a map using Es6  OOP and other technologies such as Sass and API",
+  "main": "script.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/style.comp.css -o css/style.prefix.css ",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "keywords": [
+    "OOP",
+    "ES6",
+    "API",
+    "SASS",
+    "HTML5",
+    "CSS3",
+    "Responsive"
+  ],
+  "author": "Ali Safaeyan",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0"
+  },
+  "dependencies": {
+    "leaflet": "^1.8.0"
+  }
+}

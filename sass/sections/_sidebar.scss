@@ -1,0 +1,242 @@
+.sidebar {
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: $color-dark--1;
+  padding: 2rem;
+  gap: 2rem;
+  &__logo {
+    width: 25%;
+    margin-bottom: 3rem;
+  }
+  &__form {
+    font-size: inherit;
+    color: $color-light--3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    background-color: $color-dark--2;
+    padding: 2rem;
+    margin-bottom: 1.75rem;
+    border-radius: 10px;
+    width: 100%;
+    height: 14.25rem;
+    opacity: 1;
+    transition: all 0.7s;
+    @include response(laptop) {
+      gap: 1rem;
+      padding: 1rem;
+    }
+    @include response(small-laptop) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    @include response(mobile) {
+      display: grid;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    @include response(small-mobile) {
+      display: flex;
+    }
+
+    &.hidden {
+      transform: translateY(-30rem);
+      opacity: 0;
+      height: 0;
+      padding: 0 2.25rem;
+      margin-bottom: 0;
+    }
+    &.deactive {
+      display: none;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1.4rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    height: 70vh;
+    gap: 2rem;
+    @include response(laptop) {
+      padding: 1.4rem 0;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  &__form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    &--hidden {
+      display: none;
+    }
+  }
+  &__input,
+  &__select {
+    width: 8rem;
+    background-color: $color-light--3;
+    padding: 0.1rem 0.4rem;
+    border: none;
+    border-radius: 3px;
+    @include response(laptop) {
+      width: 6rem;
+    }
+    @include response(mobile) {
+      width: 8rem;
+    }
+
+    &::placeholder {
+      color: $color-dark--2;
+    }
+    &:focus {
+      background-color: #fff;
+      outline: none;
+    }
+  }
+  &__copyright {
+    margin-top: auto;
+    font-size: 1.3rem;
+    text-align: center;
+    color: $color-light--1;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-light--3;
+  }
+  &__workout {
+    background-color: $color-dark--2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    width: 100%;
+    color: $color-light--2;
+    @include response(laptop) {
+      gap: 0.75rem 0.3rem;
+    }
+    @include response(small-laptop) {
+      padding: 1.2rem;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start;
+    }
+    @include response(tablet) {
+      justify-items: center;
+    }
+    @include response(mobile) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include response(small-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--running,
+    &--cycling {
+      border-left-width: 10px;
+      border-left-style: solid;
+      @include response(laptop) {
+        border-left-width: 5px;
+      }
+    }
+    &--running {
+      border-color: $color-brand--2;
+    }
+    &--cycling {
+      border-color: $color-brand--1;
+    }
+    &-title {
+      font-size: 1.7rem;
+      font-weight: 600;
+      grid-column: 1 / 4;
+      justify-self: start;
+      @include response(small-laptop) {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        font-size: 1.4rem;
+      }
+      @include response(tablet) {
+        font-size: 1.2rem;
+      }
+      @include response(mobile) {
+        font-size: 1.4rem;
+      }
+    }
+    &-details {
+      gap: 0.8rem;
+      width: 100%;
+      @include response(laptop) {
+        gap: 0.6rem;
+      }
+      @include response(small-laptop) {
+        width: unset;
+      }
+    }
+    &-icon {
+      font-size: 1.8rem;
+    }
+    &-value {
+      font-size: 1.5rem;
+    }
+    &-unit {
+      color: $color-light--1;
+      font-weight: 800;
+    }
+    &-edited-value {
+      width: 4rem;
+    }
+    &-icons {
+      gap: 1rem;
+      grid-column: 4/-1;
+      grid-row: 1/2;
+      display: inline-block;
+      justify-self: end;
+      @include response(small-laptop) {
+        grid-column: 2/-1;
+      }
+    }
+    & svg {
+      width: 2rem;
+      transition: all 0.5s;
+      &:hover {
+        color: rgba(237, 50, 50, 0.921);
+      }
+      @include response(small-laptop) {
+        width: 1.6rem;
+      }
+    }
+    &.delete {
+      display: none;
+    }
+    &-edit {
+      width: 80%;
+      margin: 0 auto;
+      background-color: $color-light--1;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 0.5rem;
+      justify-items: center;
+      align-items: center;
+
+      & input {
+        width: 4rem;
+      }
+      &.reveal {
+        display: grid;
+      }
+    }
+  }
+}

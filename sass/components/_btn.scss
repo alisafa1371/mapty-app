@@ -1,0 +1,29 @@
+.btn {
+  background-color: $color-light--3;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &__form {
+    width: 8rem;
+    height: 2.1rem;
+    padding: 0.3rem 0;
+    justify-self: end;
+    grid-column: 2/-1;
+
+    @include response(laptop) {
+      width: 6rem;
+    }
+    @include response(mobile) {
+      width: 8rem;
+    }
+  }
+  &__del,
+  &__edit {
+    padding: 0.3rem 1rem;
+  }
+  &__edit {
+    background-color: $color-dark--1;
+    color: $color-light--1;
+  }
+}

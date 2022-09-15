@@ -1,0 +1,9 @@
+.map {
+  background-color: $color-light--1;
+  @include response(mobile) {
+    height: 100vh;
+  }
+  @include response(small-mobile) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  @include response(laptop) {
+    font-size: 56.25%;
+  }
+  @include response(tablet) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100vh;
+  background-color: #ececec;
+  padding: 3rem;
+  overscroll-behavior-y: none;
+}
